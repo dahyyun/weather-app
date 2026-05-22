@@ -1,5 +1,5 @@
 import '../styles/globals.css'
-import { ApolloProvider } from '@apollo/client'
+import { ApolloProvider } from '@apollo/client/react'
 import { initializeApollo } from '../lib/apollo-client'
 
 function MyApp({ Component, pageProps }) {
@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Component {...[pageProps]} />
+      <Component {...pageProps} />
     </ApolloProvider>
   )
 }
