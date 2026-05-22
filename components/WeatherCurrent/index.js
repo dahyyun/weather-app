@@ -5,7 +5,14 @@ export default function WeatherCurrent({ data }) {
         src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
         alt={data.description}
       />
-      <p>{data.dt}</p>
+      <p>
+        {new Date(data.dt * 1000).toLocaleString("en-US", {
+          month: "short",
+          day: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+        })}
+      </p>
       <p>{data.city}</p>
       <p>{data.country}</p>
       <p>{data.population}</p>

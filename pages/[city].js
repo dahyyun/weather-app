@@ -2,7 +2,6 @@ import { useRouter } from "next/router";
 import { useQuery } from "@apollo/client/react";
 import { GET_CURRENT_WEATHER, GET_FORECAST } from "../lib/graphql/queries";
 import WeatherCurrent from "../components/WeatherCurrent";
-// import WeatherForecast from "../components/WeatherForecast";
 import dynamic from "next/dynamic";
 
 const WeatherForecast = dynamic(() => import("../components/WeatherForecast"), {
