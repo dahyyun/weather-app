@@ -35,6 +35,10 @@ export default function WeatherForecast({ data }) {
             <div>
               {groupedForecast[date].map((item, index) => (
                 <div key={index}>
+                  <img
+                    src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                    alt={item.description}
+                  />
                   <p>{formatTime(item.dtTxt)}</p>
                   <p>{item.description}</p>
                   <p>

@@ -1,6 +1,10 @@
 export default function WeatherCurrent({ data }) {
   return (
     <section>
+      <img
+        src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
+        alt={data.description}
+      />
       <p>{data.dt}</p>
       <p>{data.city}</p>
       <p>{data.country}</p>
