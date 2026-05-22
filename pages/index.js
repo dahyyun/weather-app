@@ -1,8 +1,8 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Link from "next/link";
+import styles from "../styles/Home.module.css";
 
-const CITIES = ['Seoul', 'Tokyo', 'Paris', 'London']
+const CITIES = ["Seoul", "Tokyo", "Paris", "London"];
 
 export default function Home() {
   return (
@@ -14,15 +14,13 @@ export default function Home() {
         <h1>
           Welcome to <span> Weather App! </span>
         </h1>
-        <p>
-          Choose a city from the list below to check the weather.
-        </p>
+        <p>Choose a city from the list below to check the weather.</p>
         {CITIES.map((city) => (
           <Link href={`/${city}`} key={city}>
-            <a>{city}</a>
+            <a key={city}>{city}</a>
           </Link>
         ))}
       </main>
     </div>
-  )
+  );
 }
