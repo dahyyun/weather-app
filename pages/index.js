@@ -10,22 +10,26 @@ export default function Home() {
       <Head>
         <title> Weather App </title>
       </Head>
-      <main className="layout">
-        <h1>
-          Welcome to <span> Weather App! </span>
+      <main className={`layout ${styles.main}`}>
+        <h1 className={styles.title}>
+          Welcome to <br />
+          <span className={styles.titleAccent}> Weather App! </span>
         </h1>
-        <p>Choose a city from the list below to check the weather.</p>
+        <p className={styles.subtitle}>
+          Choose a city from the list below to check the weather.
+        </p>
         <nav>
-          <ul>
+          <ul className={styles.cityList}>
             {CITIES.map((city) => (
               <li key={city}>
                 <Link href={`/${city}`}>
-                  <a>{city}</a>
+                  <a className={styles.cityLink}>{city}</a>
                 </Link>
               </li>
             ))}
           </ul>
         </nav>
+        <img src="/earth-3d.png" alt="globe" className={styles.globe} />
       </main>
     </div>
   );

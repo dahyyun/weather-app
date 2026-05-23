@@ -10,6 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .footer {
@@ -126,4 +127,47 @@
   .logo img {
     filter: invert(1);
   }
+}
+
+.titleAccent {
+  color: #ff1d42;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: #999;
+  margin: 16px 0 32px;
+}
+
+.globe {
+  width: 300px;
+  height: auto;
+  margin: 32px 0;
+}
+
+.cityList {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.cityLink {
+  display: inline-block;
+  padding: 10px 28px;
+  border: 1.5px solid #ff1d42;
+  border-radius: 6px;
+  color: #ff1d42;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  background-color: white;
+}
+
+.cityLink:hover {
+  background-color: #ff1d42;
+  color: white;
 }
