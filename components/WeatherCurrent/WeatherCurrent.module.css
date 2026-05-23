@@ -1,12 +1,12 @@
 .container {
-  border: 1px solid #e0e0e0;
-  border-radius: 8px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--border-radius);
   padding: 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
-  background-color: white;
+  background-color: var(--color-white);
 }
 
 .left {
@@ -24,7 +24,7 @@
 .time {
   font-size: 20px;
   font-weight: 700;
-  color: #666;
+  color: var(--color-text-gray);
 }
 
 .cityName {
@@ -36,7 +36,7 @@
 
 .population {
   font-size: 12px;
-  color: #999;
+  color: var(--color-text-light);
   font-weight: normal;
 }
 
@@ -51,5 +51,5 @@
 
 .details {
   font-size: 12px;
-  color: #666;
+  color: var(--color-text-gray);
 }
