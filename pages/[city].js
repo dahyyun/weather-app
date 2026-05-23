@@ -29,7 +29,12 @@ export default function CityPage() {
   if (weatherLoading || forecastLoading) return <main>Loading . . .</main>;
 
   return (
-    <main className="layout">
+    <main className="layout" style={{ textAlign: "center" }}>
+      <img
+        src="/earth-3d.png"
+        alt="globe"
+        style={{ width: "80px", height: "auto" }}
+      />
       <h1>Weather Information for {city}</h1>
       {weatherData && <WeatherCurrent data={weatherData.currentWeather} />}
       {forecastData && <WeatherForecast data={forecastData.forecast} />}
