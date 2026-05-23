@@ -1,26 +1,28 @@
 .container {
-  border: 1px solid #e0e0e0;
+  border: 1px solid lightgray;
   border-radius: 8px;
   overflow: hidden;
   margin-bottom: 16px;
+  background-color: white;
 }
 
 .title {
   text-align: center;
   padding: 16px;
-  font-size: 18px;
+  font-size: 28px;
   font-weight: 600;
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid lightgray;
 }
 
 .list {
+  font-size: 18px;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .dateItem {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 1px solid lightgray;
 }
 
 .dateItem:last-child {
@@ -34,7 +36,7 @@
   border: none;
   text-align: left;
   cursor: pointer;
-  font-size: 16px;
+  font-size: 24px;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
@@ -42,7 +44,7 @@
 }
 
 .dateButton:hover {
-  background-color: #f9f9f9;
+  background-color: whitesmoke;
 }
 
 .timeList {
@@ -55,7 +57,7 @@
   display: flex;
   align-items: center;
   padding: 12px 20px;
-  border-top: 1px solid #f0f0f0;
+  border-top: 1px solid whitesmoke;
   justify-content: space-between;
 }
 
@@ -73,4 +75,9 @@
 .description {
   font-size: 12px;
   color: #999;
+}
+
+.time {
+  font-size: 20px;
+  font-weight: 700;
 }

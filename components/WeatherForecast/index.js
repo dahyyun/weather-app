@@ -22,7 +22,7 @@ export default function WeatherForecast({ data }) {
     const h = parseInt(hour);
     const ampm = h >= 12 ? "pm" : "am";
     const h12 = h % 12 || 12;
-    return `${h12}:${minute}${ampm}`;
+    return `${String(h12).padStart(2, "0")}:${minute}${ampm}`;
   };
 
   return (
@@ -32,6 +32,7 @@ export default function WeatherForecast({ data }) {
         {Object.keys(groupedForecast).map((date) => (
           <li key={date} className={styles.dateItem}>
             <button
+              className={styles.dateButton}
               onClick={() => setOpenDate(openDate === date ? null : date)}
             >
               <span>{formatDate(date)}</span>
@@ -46,12 +47,12 @@ export default function WeatherForecast({ data }) {
                         src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
                         alt={item.description}
                       />
-                      <time dateTime={item.dtTxt}>
+                      <time dateTime={item.dtTxt} className={styles.time}>
                         {formatTime(item.dtTxt)}
                       </time>
                     </div>
                     <div className={styles.tempInfo}>
-                      <p>{item.description}</p>
+                      <p className={styles.description}>{item.description}</p>
                       <p>
                         {item.tempMin}°C / {item.tempMax}°C
                       </p>
