@@ -29,7 +29,7 @@ export default function CityPage() {
   if (weatherLoading || forecastLoading) return <main>Loading . . .</main>;
 
   return (
-    <main>
+    <main className="layout">
       <h1>Weather Information for {city}</h1>
       {weatherData && <WeatherCurrent data={weatherData.currentWeather} />}
       {forecastData && <WeatherForecast data={forecastData.forecast} />}

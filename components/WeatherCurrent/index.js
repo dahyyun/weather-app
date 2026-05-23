@@ -1,13 +1,18 @@
+import styles from "./WeatherCurrent.module.css";
+
 export default function WeatherCurrent({ data }) {
   return (
-    <article>
-      <header>
+    <article className={styles.container}>
+      <header className={styles.left}>
         <img
           src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
           alt={data.description}
         />
-        <div>
-          <time dateTime={new Date(data.dt * 1000).toISOString()}>
+        <div className={styles.details}>
+          <time
+            dateTime={new Date(data.dt * 1000).toISOString()}
+            className={styles.time}
+          >
             {new Date(data.dt * 1000).toLocaleString("en-US", {
               month: "short",
               day: "numeric",
@@ -15,14 +20,14 @@ export default function WeatherCurrent({ data }) {
               minute: "2-digit",
             })}
           </time>
-          <h2>
+          <h2 className={styles.cityName}>
             {data.city}, {data.country}
           </h2>
-          <p>(인구수 : {data.population})</p>
+          <p className={styles.population}>(인구수 : {data.population})</p>
         </div>
-        <div>
-          <strong>{data.temp}°C</strong>
-          <p>
+        <div className={styles.right}>
+          <strong className={styles.temperature}>{data.temp}°C</strong>
+          <p className={styles.details}>
             Feels like {data.feelsLike}°C {data.description} 풍속{" "}
             {data.windSpeed}m/s 습도 {data.humidity}%
           </p>

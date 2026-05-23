@@ -1,0 +1,49 @@
+.container {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.cityInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+.time {
+  font-size: 14px;
+  color: #666;
+}
+
+.cityName {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.population {
+  font-size: 12px;
+  color: #999;
+}
+
+.right {
+  text-align: right;
+}
+
+.temperature {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.details {
+  font-size: 12px;
+  color: #666;
+}

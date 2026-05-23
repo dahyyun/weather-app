@@ -10,7 +10,7 @@ export default function Home() {
       <Head>
         <title> Weather App </title>
       </Head>
-      <main>
+      <main className="layout">
         <h1>
           Welcome to <span> Weather App! </span>
         </h1>

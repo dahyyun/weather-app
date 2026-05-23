@@ -1,15 +1,17 @@
-import '../styles/globals.css'
-import { ApolloProvider } from '@apollo/client/react'
-import { initializeApollo } from '../lib/apollo-client'
+import "../styles/globals.css";
+import { ApolloProvider } from "@apollo/client/react";
+import { initializeApollo } from "../lib/apollo-client";
 
 function MyApp({ Component, pageProps }) {
-  const apolloClient = initializeApollo()
+  const apolloClient = initializeApollo();
 
   return (
     <ApolloProvider client={apolloClient}>
-      <Component {...pageProps} />
+      <div className="layout">
+        <Component {...pageProps} />
+      </div>
     </ApolloProvider>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

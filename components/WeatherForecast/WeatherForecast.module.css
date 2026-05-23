@@ -1,0 +1,76 @@
+.container {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.title {
+  text-align: center;
+  padding: 16px;
+  font-size: 18px;
+  font-weight: 600;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.dateItem {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.dateItem:last-child {
+  border-bottom: none;
+}
+
+.dateButton {
+  width: 100%;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dateButton:hover {
+  background-color: #f9f9f9;
+}
+
+.timeList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.timeItem {
+  display: flex;
+  align-items: center;
+  padding: 12px 20px;
+  border-top: 1px solid #f0f0f0;
+  justify-content: space-between;
+}
+
+.timeInfo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.tempInfo {
+  text-align: right;
+  font-weight: 600;
+}
+
+.description {
+  font-size: 12px;
+  color: #999;
+}

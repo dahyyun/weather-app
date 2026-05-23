@@ -1,4 +1,5 @@
 import { useState } from "react";
+import styles from "./WeatherForecast.module.css";
 
 export default function WeatherForecast({ data }) {
   const [openDate, setOpenDate] = useState(null);
@@ -25,29 +26,36 @@ export default function WeatherForecast({ data }) {
   };
 
   return (
-    <section>
-      <h2>5-day Forecast</h2>
-      <ul>
+    <section className={styles.container}>
+      <h2 className={styles.title}>5-day Forecast</h2>
+      <ul className={styles.list}>
         {Object.keys(groupedForecast).map((date) => (
-          <li key={date}>
+          <li key={date} className={styles.dateItem}>
             <button
               onClick={() => setOpenDate(openDate === date ? null : date)}
             >
               <span>{formatDate(date)}</span>
+              <span>{openDate === date ? "∧" : "∨"}</span>
             </button>
             {openDate === date && (
-              <ul>
+              <ul className={styles.timeList}>
                 {groupedForecast[date].map((item, index) => (
-                  <li key={index}>
-                    <img
-                      src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
-                      alt={item.description}
-                    />
-                    <time dateTime={item.dtTxt}>{formatTime(item.dtTxt)}</time>
-                    <p>{item.description}</p>
-                    <p>
-                      {item.tempMin}°C / {item.tempMax}°C
-                    </p>
+                  <li key={index} className={styles.timeItem}>
+                    <div className={styles.timeInfo}>
+                      <img
+                        src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                        alt={item.description}
+                      />
+                      <time dateTime={item.dtTxt}>
+                        {formatTime(item.dtTxt)}
+                      </time>
+                    </div>
+                    <div className={styles.tempInfo}>
+                      <p>{item.description}</p>
+                      <p>
+                        {item.tempMin}°C / {item.tempMax}°C
+                      </p>
+                    </div>
                   </li>
                 ))}
               </ul>
