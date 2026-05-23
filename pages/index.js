@@ -15,11 +15,17 @@ export default function Home() {
           Welcome to <span> Weather App! </span>
         </h1>
         <p>Choose a city from the list below to check the weather.</p>
-        {CITIES.map((city) => (
-          <Link href={`/${city}`} key={city}>
-            <a key={city}>{city}</a>
-          </Link>
-        ))}
+        <nav>
+          <ul>
+            {CITIES.map((city) => (
+              <li key={city}>
+                <Link href={`/${city}`}>
+                  <a>{city}</a>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </main>
     </div>
   );

@@ -26,30 +26,35 @@ export default function WeatherForecast({ data }) {
 
   return (
     <section>
-      {Object.keys(groupedForecast).map((date) => (
-        <div key={date}>
-          <div onClick={() => setOpenDate(openDate === date ? null : date)}>
-            <p>{formatDate(date)}</p>
-          </div>
-          {openDate === date && (
-            <div>
-              {groupedForecast[date].map((item, index) => (
-                <div key={index}>
-                  <img
-                    src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
-                    alt={item.description}
-                  />
-                  <p>{formatTime(item.dtTxt)}</p>
-                  <p>{item.description}</p>
-                  <p>
-                    {item.tempMin}°C / {item.tempMax}°C
-                  </p>
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
-      ))}
+      <h2>5-day Forecast</h2>
+      <ul>
+        {Object.keys(groupedForecast).map((date) => (
+          <li key={date}>
+            <button
+              onClick={() => setOpenDate(openDate === date ? null : date)}
+            >
+              <span>{formatDate(date)}</span>
+            </button>
+            {openDate === date && (
+              <ul>
+                {groupedForecast[date].map((item, index) => (
+                  <li key={index}>
+                    <img
+                      src={`https://openweathermap.org/img/wn/${item.icon}@2x.png`}
+                      alt={item.description}
+                    />
+                    <time dateTime={item.dtTxt}>{formatTime(item.dtTxt)}</time>
+                    <p>{item.description}</p>
+                    <p>
+                      {item.tempMin}°C / {item.tempMax}°C
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
     </section>
   );
 }

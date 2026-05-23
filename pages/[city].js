@@ -26,13 +26,13 @@ export default function CityPage() {
     },
   );
 
-  if (weatherLoading || forecastLoading) return <div>Loading . . .</div>;
+  if (weatherLoading || forecastLoading) return <main>Loading . . .</main>;
 
   return (
-    <div>
-      <h1>{city}</h1>
+    <main>
+      <h1>Weather Information for {city}</h1>
       {weatherData && <WeatherCurrent data={weatherData.currentWeather} />}
       {forecastData && <WeatherForecast data={forecastData.forecast} />}
-    </div>
+    </main>
   );
 }

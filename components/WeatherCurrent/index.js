@@ -1,26 +1,33 @@
 export default function WeatherCurrent({ data }) {
   return (
-    <section>
-      <img
-        src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
-        alt={data.description}
-      />
-      <p>
-        {new Date(data.dt * 1000).toLocaleString("en-US", {
-          month: "short",
-          day: "numeric",
-          hour: "2-digit",
-          minute: "2-digit",
-        })}
-      </p>
-      <p>{data.city}</p>
-      <p>{data.country}</p>
-      <p>{data.population}</p>
-      <p>{data.temp}°C</p>
-      <p>{data.feelsLike}°C</p>
-      <p>{data.description}</p>
-      <p>{data.windSpeed}m/s</p>
-      <p>{data.humidity}%</p>
-    </section>
+    <article>
+      <header>
+        <img
+          src={`https://openweathermap.org/img/wn/${data.icon}@2x.png`}
+          alt={data.description}
+        />
+        <div>
+          <time dateTime={new Date(data.dt * 1000).toISOString()}>
+            {new Date(data.dt * 1000).toLocaleString("en-US", {
+              month: "short",
+              day: "numeric",
+              hour: "2-digit",
+              minute: "2-digit",
+            })}
+          </time>
+          <h2>
+            {data.city}, {data.country}
+          </h2>
+          <p>(인구수 : {data.population})</p>
+        </div>
+        <div>
+          <strong>{data.temp}°C</strong>
+          <p>
+            Feels like {data.feelsLike}°C {data.description} 풍속{" "}
+            {data.windSpeed}m/s 습도 {data.humidity}%
+          </p>
+        </div>
+      </header>
+    </article>
   );
 }
